@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>corsarobianco</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><a href="/">corsarobianco</a></h1>
+    <form action="search">
+        <input name="q" value="<%=q%>">
+        <input type="submit" value="search">
+    </form>
+    <%if (magnetUrl){%>
+        <h2><%= filename %></h2>
+        <p>magnet url:</p>
+        <textarea cols="80" rows="5"><%- magnetUrl %></textarea>
+        <p>
+            <a class="dark" href="<%= magnetUrl %>">Magnet url for "<%= filename %>"</a>
+            <a class="dark" target="_blank" href="<%=detailsUrl%>"><%= filename %> on "il corsaro nero"</a>
+        </p>
+    <%}%>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+body {
+  padding-top: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+h1 a {
+    color: #72a8a2;
+}
+a {
+  color: ##72a8a2;
+}
+
+th {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+}
+
+td {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+a.dark {
+    background-color: #72a8a2;
+    color: white;
+    padding: 5px;
+}
+
+tr.row_even td {
+    background-color: #72a8a2;
+    color: white;
+}
+
+tr.row_even td a {
+    color: white;
+}
+
+tr.row_odd td {
+    color: black;
+}
+
+tr.row_odd td a {
+    color: black;
+}

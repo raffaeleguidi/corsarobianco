@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>corsarobianco</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><a href="/">corsarobianco</a></h1>
+    <form action="search">
+        <input name="q" value="<%=q%>">
+        <input type="submit" value="search">
+    </form>
+    <%if (q){%>
+    <p>Search results for "<%= q %>":</p>
+    <%} else {%>
+    <p>Latest additions:</p>
+    <%}%>
+    <%if (results){%>
+    <table width="100%">
+        <tr>
+            <th width="1px">type</th>
+            <th>filename</th>
+            <th width="75px" style="text-align: right">size</th>
+        </tr>
+        <%
+        var even = true;
+        for (i in results) {
+            var item = results[i];
+        %>
+        <tr class="row_<%=(even ? "even" : "odd")%>">
+            <td><%=item.type%></td>
+            <td><a href="info?url=<%=item.detailsUrl%>&filename=<%=item.filename%>&q=<%= q %>"><%=item.filename%></a> </td>
+            <td align="right"><%=item.size%></td>
+        </tr>
+        <%
+            even = !even;
+        }%>
+    </table>
+    <%}%>
+  </body>
+</html>
