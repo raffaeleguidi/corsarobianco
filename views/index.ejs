@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>corsarobianco</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <title><%=(q ? q : "latest movies")%> - corsarobianco</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
-  <body>
+  <body">
     <h1><a href="/">corsarobianco</a></h1>
     <form action="search">
         <input name="q" value="<%=q%>">
@@ -16,11 +17,11 @@
     <p>Latest additions:</p>
     <%}%>
     <%if (results){%>
-    <table width="100%">
+    <table>
         <tr>
             <th width="1px">type</th>
             <th>filename</th>
-            <th width="75px" style="text-align: right">size</th>
+            <th width="90px" style="text-align: right">size</th>
         </tr>
         <%
         var even = true;
@@ -29,8 +30,15 @@
         %>
         <tr class="row_<%=(even ? "even" : "odd")%>">
             <td><%=item.type%></td>
-            <td><a href="info?url=<%=item.detailsUrl%>&filename=<%=item.filename%>&q=<%= q %>"><%=item.filename%></a> </td>
-            <td align="right"><%=item.size%></td>
+            <td>
+                <a href="info?url=<%=item.detailsUrl%>&filename=<%=item.filename%>&q=<%= q %>"><%=item.filename%></a><br/>
+                (added <%=item.date%>)
+            </td>
+            <td align="right">
+               <%=item.size%><br />
+               <%=item.seeds ? item.seeds : "no"%> seeds<br />
+               <%=item.leeches ? item.leeches : "no"%> leeches
+            </td>
         </tr>
         <%
             even = !even;

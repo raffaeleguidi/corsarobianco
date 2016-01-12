@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>corsarobianco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= filename %> - corsarobianco</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
@@ -11,12 +12,20 @@
         <input type="submit" value="search">
     </form>
     <%if (magnetUrl){%>
-        <h2><%= filename %></h2>
+        <h3><%= filename %></h3>
         <p>magnet url:</p>
-        <textarea cols="80" rows="5"><%- magnetUrl %></textarea>
+        <textarea><%- magnetUrl %></textarea>
+        <p>
+            Magnet url:
+        </p>
         <p>
             <a class="dark" href="<%= magnetUrl %>">Magnet url for "<%= filename %>"</a>
-            <a class="dark" target="_blank" href="<%=detailsUrl%>"><%= filename %> on "il corsaro nero"</a>
+        </p>
+        <p>
+            On "il corsaro nero":
+        </p>
+        <p>
+            <a class="dark" target="_blank" href="<%=detailsUrl%>"><%= filename %></a>
         </p>
     <%}%>
   </body>
